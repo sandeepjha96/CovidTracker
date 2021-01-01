@@ -1,6 +1,10 @@
 .header-left {
 
 }
+.whole-back {
+    color: solid  black;
+    background-color:#F0F8FF;
+}
 .header-right {
     
         display: flex;
@@ -17,9 +21,13 @@
       }
       
       td, th {
+        text: red;
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
       }
       
-      
+#but:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}

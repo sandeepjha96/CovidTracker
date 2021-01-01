@@ -1,5 +1,5 @@
 
-
+<div class="whole-back">
 <div class="home container   ">
   <div class="row">
   <div class="top-left col-lg-7">
@@ -51,12 +51,12 @@
         </thead>
         <tbody *ngFor="let stateData of statewise; let i=index" >
           
-          <tr>
+          <tr id="but">
             
             
             <td>
               
-              <a mat-button  (click)="selectedData(stateData.state); showHideData(stateData)" >
+              <a  mat-button  (click)="selectedData(stateData.state); showHideData(stateData)" >
                 
 
                 
@@ -85,3 +85,4 @@
 </div>
 </div>
 
+</div>
