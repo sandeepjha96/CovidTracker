@@ -1,0 +1,25 @@
+.header-left {
+
+}
+.header-right {
+    
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        margin-bottom: auto;
+        margin-top: .25rem;
+    }
+    
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: separate;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      

@@ -1,0 +1,29 @@
+
+        <div>
+        <table>
+          <thead>
+            <tr>
+              <th>District</th>
+              <th>Confirmed</th>
+              
+
+            </tr>
+            
+          </thead>
+          <tbody *ngFor="let stateData of myArray; let i=index" >
+            
+            <tr>
+              
+              
+              <td>
+                
+                  {{stateData.stateName}}
+            </td>
+            <td>
+              {{stateData.confirmed}}
+            </td>
+                  </tr>
+          </tbody>
+        </table>
+
+        <div>

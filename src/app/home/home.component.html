@@ -1,0 +1,87 @@
+
+
+<div class="home container   ">
+  <div class="row">
+  <div class="top-left col-lg-7">
+      <div class=" header row">
+        <div  class=" header-left col-lg-7">
+              <h5>INDIA COVID-19 TRACKER</h5>
+              <h5 style="color: #298ae1;">Angular app  </h5>
+              
+
+        </div>
+        <div  class="header-right col-lg-5">
+               <h5>Updated 10 min ago</h5>
+               <div>
+                 <h5>{{ lastUpdated  | date }}</h5>
+               </div>
+       </div>
+      </div>
+      <div class="row ">
+
+        <div class="col-lg-3">
+            <h5>Confirmed</h5>
+            <h5>{{statewisecase.confirmed}} </h5>
+        </div>
+        <div class="col-lg-3">
+            <h5 class="heading ">Active</h5>
+            <h5 class="">{{statewisecase.active}}</h5>
+        </div>
+        <div class="col-lg-3">
+            <h5 class="heading ">Recovered</h5>
+            <h5 class="">{{statewisecase.recovered}} </h5>
+        </div>
+        <div class="col-lg-3">
+            <h5 class="heading ">Deceased</h5>
+            <h5 class=" ">{{statewisecase.deaths}}</h5>
+        </div>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Confirmed</th>
+            <th>deaths</th>
+            <th>recovered</th>
+            <th>active</th>
+  
+          </tr>
+          
+        </thead>
+        <tbody *ngFor="let stateData of statewise; let i=index" >
+          
+          <tr>
+            
+            
+            <td>
+              
+              <a mat-button  (click)="selectedData(stateData.state); showHideData(stateData)" >
+                
+
+                
+                <span class="fa fa-home fa-lg">{{stateData.state}}</span> </a>
+          </td>
+          <td>
+            {{stateData.confirmed}}
+           </td>
+            <td>
+              {{stateData.deaths}}
+               </td> <td>
+               {{stateData.recovered}}
+               </td> <td>
+                {{stateData.active}}
+                 </td>
+                </tr>
+                <tr class="nohover"> <app-district [districtData] = "stateData.state"  *ngIf="stateData['show'] "></app-district> </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class=" top-right col-lg-5">
+      <h2> MAP</h2>
+  </div>
+</div>
+</div>
+
