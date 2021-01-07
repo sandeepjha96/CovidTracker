@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-helpline',
@@ -10,6 +12,7 @@ export class HelplineComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }

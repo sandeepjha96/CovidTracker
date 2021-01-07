@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { Ibanners } from './interfaces/banners.interface';
 import { Itracker } from './interfaces/tracker.interface';
 
 @Injectable({
@@ -10,6 +11,8 @@ import { Itracker } from './interfaces/tracker.interface';
 export class CoronaServiceService {
 
   url_statewise = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise';
+  url_banner ='https://api.covid19india.org/website_data.json';
+  subject: Subject<any> = new Subject<any>();
     constructor(private http: HttpClient) { }
 
   getDataStateWise(): Observable<Itracker> {
@@ -20,4 +23,20 @@ export class CoronaServiceService {
    )
     );
   }
+ getBanners() : Observable<Ibanners> {
+  return this.http.get<Ibanners>(this.url_banner).pipe(
+    tap (
+     success => console.log('success'),
+     error => console.log('error')
+  )
+   );
+ }
+ sendDataOfState(  a){
+this.subject.next(a);
+
+}
+getDataOfState(): Observable<any> {
+return this.subject.asObservable();
+}
+
 }
