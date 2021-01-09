@@ -12,7 +12,6 @@ export class CoronaServiceService {
 
   url_statewise = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise';
   url_banner ='https://api.covid19india.org/website_data.json';
-  subject: Subject<any> = new Subject<any>();
     constructor(private http: HttpClient) { }
 
   getDataStateWise(): Observable<Itracker> {
@@ -31,12 +30,6 @@ export class CoronaServiceService {
   )
    );
  }
- sendDataOfState(  a){
-this.subject.next(a);
-
-}
-getDataOfState(): Observable<any> {
-return this.subject.asObservable();
-}
+ 
 
 }

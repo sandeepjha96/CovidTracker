@@ -11,11 +11,15 @@ import { IStatewise } from '../interfaces/tracker.interface';
 })
 export class StateDataComponent implements OnInit {
 subscription:Subscription;
-stateData:IStatewise;;
-  constructor(private cs : CoronaServiceService) { }
+stateData:IStatewise;
+
+  constructor(private hm:HomeComponent) { }
 
   ngOnInit() {
-     this.cs.getDataOfState().subscribe(data => {
+    //  this.hm.getDataOfState().subscribe(data => {
+    //   this.stateData=data;
+    // })
+    this.hm.subject.subscribe(data => {
       this.stateData=data;
     })
   }

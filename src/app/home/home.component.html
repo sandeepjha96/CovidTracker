@@ -19,7 +19,7 @@
                </div>
        </div>
       </div>
-      <div class="row ">
+      <div class="row " *ngIf="statewisecase">
 
         <div class="col-lg-3">
             <h5>Confirmed</h5>
@@ -42,8 +42,8 @@
       <table>
         <thead>
           <tr>
-            <th>State</th>
-            <th>Confirmed</th>
+            <th (click)="sortDataBasedOnState()">State </th>
+            <th (click)="sortDataBasedOnConfirmed()" >Confirmed</th>
             <th>deaths</th>
             <th>recovered</th>
             <th>active</th>
@@ -51,7 +51,7 @@
           </tr>
           
         </thead>
-        <tbody *ngFor="let stateData of statewise; let i=index" >
+        <tbody *ngFor="let stateData of statewise "  >
           
           <tr id="but">
             
@@ -65,7 +65,7 @@
                 <span class="fa fa-home fa-lg">{{stateData.state}}</span> </a>
           </td>
           <td>
-            {{stateData.confirmed}}
+            {{stateData.confirmed  }}
            </td>
             <td>
               {{stateData.deaths}}

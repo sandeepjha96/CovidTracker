@@ -21,6 +21,7 @@ import { FaqComponent } from './faq/faq.component';
 import { HelplineComponent } from './helpline/helpline.component';
 import { ContactComponent } from './contact/contact.component';
 import { StateDataComponent } from './state-data/state-data.component';
+import { SortByPipe } from './shared/SortByPipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StateDataComponent } from './state-data/state-data.component';
     FaqComponent,
     HelplineComponent,
     ContactComponent,
-    StateDataComponent
+    StateDataComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
